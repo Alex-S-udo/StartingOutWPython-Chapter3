@@ -19,23 +19,29 @@
 def main():
 
     # Ask for the number of fat grams.
-    fat_grams = input('Enter the number of fat grams consumed: ')
+    # Make sure to use "int" to save the input as an integer, float can also be used if needed, just format it to 2 decimal places using the format key word
+    fat_grams = int(input('Enter the number of fat grams consumed: '))
     fat_calories(fat_grams)
 
     # Ask for the number of carb grams.
-    carb_grams = input('Enter the number of carbohydrate grams consumed: ')
+    # Make sure to use "int" to save the input as an integer, float can also be used if needed, just format it to 2 decimal places using the format key word
+    carb_grams = int(input('Enter the number of carbohydrate grams consumed: '))
     carb_calories(carb_grams)
 
 def fat_calories(fat_grams):
     # Calculate the calories from fat.
     # calories_from_fat = fat_grams*9
-    calories_from_fat = fat_grams * 9
+    #avoid any magic number by using CONSTANTS
+    FAT_CONVERSION = 9
+    calories_from_fat = fat_grams * FAT_CONVERSION
     print 'The calories from fat are', calories_from_fat
 
 def carb_calories(carb_grams):
     # Calculate the calories from carbs.
     # calories_from_carbs = carb_grams * 4
-    calories_from_carbs = carb_grams * 4
+    #avoid any magic number by using CONSTANTS
+    CARBS_CONVERSION = 4
+    calories_from_carbs = carb_grams * CARBS_CONVERSION
     print 'The calories from carbohydrates are', calories_from_carbs
 
 # Call the main function.
